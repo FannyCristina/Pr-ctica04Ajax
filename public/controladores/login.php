@@ -13,6 +13,21 @@
  header("Location: ../vista/login.html");
  }
 
+ switch ($_SESSION['perfil']){
+	case '1':
+		echo '../vistas/administrador.php';
+		break;
+	case '2':
+		echo 'vistas/profesor.php';
+		break;
+	case '3':
+		echo 'vistas/alumno.php';
+		break;
+				default:
+		echo 'vistas/general.php';
+		break;
+}
+
  $conn->close();
 ?>
 
